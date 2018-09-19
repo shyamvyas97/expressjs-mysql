@@ -19,6 +19,8 @@
                     <th>name</th>
                     <th>year</th>
                     <th>rating</th>
+                    <th>edit</th>
+                    <th>delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +30,8 @@
                     <td><%= data[i]['name']%></td>
                     <td><%= data[i]['year']%></td>
                     <td><%= data[i]['rating']%></td>
+                    <td><a class="btn btn-warning" href="/edit/<%= data[i]['id']%>" role="button">Edit</a></td>
+                    <td><a class="btn btn-danger" href="/delete/<%= data[i]['id']%>" role="button">delete</a></td>
                 </tr>
             <% } %>
             </tbody>

@@ -47,7 +47,7 @@ app.post('/insert', function(req, res){
 app.get('/edit/:id',function(req,res){
   db.query("SELECT * FROM movie WHERE id=?",[req.params.id],function (error, results, fields) {
     if (error) throw error;
-    console.log(results);
+    // console.log(results);
     res.render('edit',{data:results});
   });
 });
@@ -56,7 +56,7 @@ app.get('/edit/:id',function(req,res){
 app.post('/edit',function(req,res){
   db.query("UPDATE movie SET name=?,year=?,rating=? WHERE id=?",[req.body.name,req.body.year,req.body.rating,req.body.id],function (error, results, fields) {
     if (error) throw error;
-    console.log(results);
+    // console.log(results);
     res.redirect('/');
   });
 });

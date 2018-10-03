@@ -69,6 +69,15 @@ app.get('/delete/:id',function(req,res){
   });
 });
 
+// api routes
+
+// return all records as json
+app.get('/api',function(req,res){
+  db.query('SELECT * FROM movie', function (error, results, fields) {
+    if (error) throw error;
+    res.json(results);
+  });
+});
 
 app.listen(3000,function(){
     console.log("server linsning on port 3000")
